@@ -1,6 +1,5 @@
 # Installation
 
-
 The code was tested on Ubuntu 20.04, with [Anaconda](https://www.anaconda.com/download) Python 3.6 and [PyTorch]((http://pytorch.org/)) v0.4.1. NVIDIA GPUs are needed for both training and testing.
 After install Anaconda:
 
@@ -57,11 +56,17 @@ then
 git clone https://github.com/CharlesShang/DCNv2
 ./make.sh
 ```
-6. [Optional, only required if you are using extremenet or multi-scale testing] Compile NMS if your want to use multi-scale testing or test ExtremeNet.
+
+6. Install IOU3D
+```
+cd $CenterNet_ROOT/src/lib/utils/iou3d
+python setup.py install
+```
+7. [Optional, only required if you are using extremenet or multi-scale testing] Compile NMS if your want to use multi-scale testing or test ExtremeNet.
 
     ~~~
     cd $CenterNet_ROOT/src/lib/external
     make
     ~~~
 
-7. Download pertained models for [detection]() or [pose estimation]() and move them to `$CenterNet_ROOT/models/`. More models can be found in [Model zoo](MODEL_ZOO.md).
+8. Download pertained models for [detection]() or [pose estimation]() and move them to `$CenterNet_ROOT/models/`. More models can be found in [Model zoo](MODEL_ZOO.md).
